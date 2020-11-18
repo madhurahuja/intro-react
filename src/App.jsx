@@ -1,5 +1,5 @@
-import React from "react";
-import Table from "./Table";
+import React from 'react';
+import Table from './Table';
 /*Add import statement here*/
 
 class App extends React.Component {
@@ -7,9 +7,9 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      buttonClicked: "",
+      buttonClicked: '',
       assignments: [] /*Below this line, add the students state variable*/,
-      grades: {}
+      grades: {},
     };
 
     this.handleButtonClicked = this.handleButtonClicked.bind(this);
@@ -21,14 +21,14 @@ class App extends React.Component {
 
   handleButtonClicked(buttonName) {
     this.setState({
-      buttonClicked: buttonName
+      buttonClicked: buttonName,
     });
   }
 
   /*Check out this addAssignment method*/
   addAssignment(assignmentName) {
     this.setState({
-      assignments: this.state.assignments.concat(assignmentName)
+      assignments: this.state.assignments.concat(assignmentName),
     });
   }
 
@@ -87,29 +87,20 @@ class App extends React.Component {
 
     return (
       <div>
-        <div className="Box Box--spacious f4">
-          <div className="Box-header">
-            {/* Replace this line with the proper header code*/}
+        <div className='Box Box--spacious f4'>
+          <div className='Box-header'>
+            <h3 className='Box-title d-flex flex-justify-center'>GradeBook</h3>
           </div>
         </div>
-        <nav className="UnderlineNav d-flex flex-justify-center">
-          <div className="UnderlineNav-body pt-6">
-            <button
-              className="btn btn-primary"
-              onClick={() => this.handleButtonClicked("assignments")}
-            >
+        <nav className='UnderlineNav d-flex flex-justify-center'>
+          <div className='UnderlineNav-body pt-6'>
+            <button className='btn btn-primary' onClick={() => this.handleButtonClicked('assignments')}>
               Assignments
             </button>
-            <button
-              className="btn btn-primary"
-              onClick={() => this.handleButtonClicked("students")}
-            >
+            <button className='btn btn-primary' onClick={() => this.handleButtonClicked('students')}>
               Students
             </button>
-            <button
-              className="btn btn-primary"
-              onClick={() => this.handleButtonClicked("grades")}
-            >
+            <button className='btn btn-primary' onClick={() => this.handleButtonClicked('grades')}>
               Grades
             </button>
           </div>
